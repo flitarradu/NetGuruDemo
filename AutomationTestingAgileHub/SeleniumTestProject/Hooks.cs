@@ -16,7 +16,12 @@ namespace SeleniumTestProject
         public void Setup()
         {
             Driver = new ChromeDriver();
+                        // setam driverul sa stea cate o secunda pentru fiecere element unde e folosit
+            //Driver.Manage().Timeouts().ImplicitWait = TimeSpan
+            //.FromSeconds(2);
             Driver.Manage().Window.Maximize();
+
+
             Driver.Navigate().GoToUrl("http://demosite.casqad.org/");
         }
 

@@ -12,10 +12,19 @@ namespace SeleniumTestProject
     [TestFixture]
     class Tests : Hooks
     {
-        [Test]
+        [Test, Category("Login")]
         public void MyFirstTest()
         {
-            HomePage myPage = new HomePage(Driver);
+            // Arrante
+            HomePage homePage = new HomePage(Driver);
+            homePage.GoToAuthentication();
+
+            //Act
+            LoginPage loginPage = new LoginPage(Driver);
+            loginPage.AuthenticateUser("admin.test3@gmail.com", "password123");
+
+            //Assert
+            Assert.IsTrue(homePage.VerifyElementIsDisplayed(homePage.DeconectareButton));
 
             Thread.Sleep(1000);
         }
