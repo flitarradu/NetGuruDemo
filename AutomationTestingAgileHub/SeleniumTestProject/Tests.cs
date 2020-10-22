@@ -15,7 +15,7 @@ namespace SeleniumTestProject
         [Test, Category("Login")]
         public void MyFirstTest()
         {
-            // Arrante
+            // Arrange
             HomePage homePage = new HomePage(Driver);
             homePage.GoToAuthentication();
 
