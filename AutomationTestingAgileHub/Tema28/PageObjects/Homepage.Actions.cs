@@ -90,6 +90,12 @@ namespace Tema28.PageObjects
             showButton.Click();
         }
 
+        public void UntoldPage()
+        {
+            menuButton.Click();
+            homeButton.Click();
+        }
+
 
     }
 }

@@ -86,6 +86,22 @@ namespace Tema28
             //Assert
             ((IJavaScriptExecutor)Driver).ExecuteScript("window.scrollTo(0, 500)"); 
             Assert.IsTrue(homePage.showNameText.Displayed);
+        }
+
+        [Test]
+        public void UntoldPage()
+        {
+            Driver.Manage().Window.Maximize();
+            Driver.Navigate().GoToUrl("https://untold.com/");
+
+            // Arrange
+            Homepage homePage = new Homepage(Driver);
+
+            // Act
+            homePage.UntoldPage();
+
+            // Assert
+            Assert.IsTrue(Driver.FindElement(By.XPath("//*[@id='untold-wrap']/div[3]/div[1]")).Displayed);
 
 
         }
