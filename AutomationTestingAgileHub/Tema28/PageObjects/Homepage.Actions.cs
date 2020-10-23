@@ -18,9 +18,10 @@ namespace Tema28.PageObjects
         {
             _driver = driver;
 
-            _driverWait = new WebDriverWait(_driver, TimeSpan.FromSeconds(20));
+            _driverWait = new WebDriverWait(_driver, TimeSpan.FromSeconds(30));
 
             _driverWait.IgnoreExceptionTypes();
+           
         }
 
         public void SearchGoogleImage(string query)
@@ -54,24 +55,39 @@ namespace Tema28.PageObjects
 
             subjectsTextBox.SendKeys("English");
             subjectsTextBox.SendKeys(Keys.Tab);
-            //Actions actions = new Actions(_driver);
-            //actions.MoveToElement(hobbiesCheckbox).Click().Perform();
-            //Actions action = new Actions(_driver);
-            //action.MoveToElement(hobbiesCheckbox);
-            //if (hobbiesCheckbox.Displayed)
-            //    action.Perform();
-            var x = hobbiesCheckbox.FindElements(By.TagName("value"));
-            hobbiesCheckbox.Click();
             addressTextBox.SendKeys("Sanpetru, Brasov");
+            var x = hobbiesCheckbox.FindElements(By.TagName("label"));
+
+            x.Where(i => i.Text.Equals("Sports")).FirstOrDefault().Click();
             stateTextBox.SendKeys("NCR");
             stateTextBox.SendKeys(Keys.Tab);
             cityTextBox.SendKeys("Delhi");
             cityTextBox.SendKeys(Keys.Tab);
             submitButton.Click();
 
+            Thread.Sleep(400);
 
 
+        }
 
+        public void DemoQATextBox()
+        {
+            
+            nameTBTextBox.SendKeys("Flitar Radu");
+            emailTBTextBox.SendKeys("flitar.radu@gmail.com");
+            addressTBTextBox.SendKeys("Fagaras");
+            permanentAddressTBTextBox.SendKeys("Sanpetru");
+            ((IJavaScriptExecutor)_driver).ExecuteScript("window.scrollTo(0, 300)"); 
+            submitFormButton.Click();
+        }
+
+        public void TheatreShow()
+        {
+            teamButton.Click();
+            ((IJavaScriptExecutor)_driver).ExecuteScript("window.scrollTo(0, 500)"); 
+            actorButton.Click();
+            ((IJavaScriptExecutor)_driver).ExecuteScript("window.scrollTo(0, 600)"); 
+            showButton.Click();
         }
 
 

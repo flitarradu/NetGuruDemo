@@ -18,7 +18,7 @@ namespace Tema28.PageObjects
         private IWebElement dateTextBox => _driver.FindElement(By.XPath("//input[@id='dateOfBirthInput']"));
         private IWebElement subjectsTextBox => _driverWait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//input[@id='subjectsInput']")));
         //private IWebElement hobbiesCheckbox => _driverWait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//*[@id='hobbies-checkbox-1']")));
-        private IWebElement hobbiesCheckbox =>  _driver.FindElement(By.XPath("//*[@id='hobbiesWrapper']/div[2]"));
+        private IWebElement hobbiesCheckbox =>  _driver.FindElement(By.XPath("/html/body/div/div/div/div[2]/div[2]/div[1]/form/div[7]/div[2]"));
 
         private IWebElement addressTextBox => _driver.FindElement(By.XPath("//*[@id='currentAddress']"));
         private IWebElement stateTextBox => _driverWait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//*[@id='react-select-3-input']")));
@@ -26,7 +26,17 @@ namespace Tema28.PageObjects
         private IWebElement submitButton => _driver.FindElement(By.XPath("//*[@id='submit']"));
         public IWebElement thanksForm => _driver.FindElement(By.XPath("//*[@id='example-modal-sizes-title-lg']"));
         public IWebElement dayPick => _driver.FindElement(By.XPath("//*[@id='dateOfBirth']/div[2]/div[2]/div/div/div[2]/div[2]/div[4]/div[5]"));
-        
+        private IWebElement nameTBTextBox => _driver.FindElement(By.XPath("//*[@id='userName']"));
+        private IWebElement emailTBTextBox => _driver.FindElement(By.XPath("//*[@id='userEmail']"));
+        private IWebElement addressTBTextBox => _driver.FindElement(By.XPath("//*[@id='currentAddress']"));
+        private IWebElement permanentAddressTBTextBox => _driver.FindElement(By.XPath("//*[@id='permanentAddress']"));
+        public IWebElement submitFormButton => _driver.FindElement(By.XPath("//*[@id='submit']"));
+
+
+
+
+
+
 
     }
 }

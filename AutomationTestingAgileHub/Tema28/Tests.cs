@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,8 +40,6 @@ namespace Tema28
         public void DemoQATest()
         {
             Driver.Manage().Window.Maximize();
-
-
             Driver.Navigate().GoToUrl("https://demoqa.com/automation-practice-form");
             // Arrange
             Homepage homePage = new Homepage(Driver);
@@ -48,9 +47,47 @@ namespace Tema28
             // Act
             homePage.FillDemoQAForm();
 
+            
             //Assert
             Assert.IsTrue(homePage.thanksForm.Displayed);
         }
 
+        [Test]
+        public void DemoQAForm()
+        {
+            Driver.Manage().Window.Maximize();
+            Driver.Navigate().GoToUrl("https://demoqa.com/text-box");
+
+            //Arrange
+            Homepage homePage = new Homepage(Driver);
+
+            //Act
+            homePage.DemoQATextBox();
+
+            //Assert
+            var element = Driver.FindElement(By.XPath("//*[@id='name']"));
+            Assert.IsTrue(element.Displayed);
+
+
+        }
+
+        [Test]
+        public void FindShow()
+        {
+            Driver.Manage().Window.Maximize();
+            Driver.Navigate().GoToUrl("https://www.teatrulsicaalexandrescu.ro/?lang=en");
+
+            // Arrange
+            Homepage homePage = new Homepage(Driver);
+
+            // Act
+            homePage.TheatreShow();
+
+            //Assert
+            ((IJavaScriptExecutor)Driver).ExecuteScript("window.scrollTo(0, 500)"); 
+            Assert.IsTrue(homePage.showNameText.Displayed);
+
+
+        }
     }
 }
