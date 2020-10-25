@@ -102,8 +102,8 @@ namespace Tema28
 
             // Assert
             Assert.IsTrue(Driver.FindElement(By.XPath("//*[@id='untold-wrap']/div[3]/div[1]")).Displayed);
-
-
         }
+
+
     }
 }
