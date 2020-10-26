@@ -1,5 +1,6 @@
 ﻿using Ex6;
 using Ex6.PageObjects;
+using Newtonsoft.Json;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
@@ -17,10 +18,11 @@ namespace Tema28
     [TestFixture]
     class Tests : Hooks
     {
-        public Ex6.Model ReadJSON()
+       
+        public List<User> ReadJSON()
         {
             var jsonString = File.ReadAllText("C:\\Users\\radu.flitar\\DEV\\Learning\\AgileHub\\AutomationTestingAgileHub\\Ex6\\users.json");
-            var jsonModel = JsonSerializer.Deserialize<Model>(jsonString);
+            var jsonModel = JsonConvert.DeserializeObject<List<User>>(jsonString);
 
             return jsonModel;
         }
@@ -51,7 +53,7 @@ namespace Tema28
             LoginPage loginPage = new LoginPage(Driver);
 
             // Act
-            loginPage.EnterCredentials(jsonModel.Users["user3"].Email, jsonModel.Users["user3"].Password);
+            loginPage.EnterCredentials(jsonModel[2].Email, jsonModel[2].Password);
 
             //Assert
             Assert.IsTrue(Driver.FindElement(By.XPath("//a[text()='Deconectare']")).Displayed);
@@ -91,7 +93,7 @@ namespace Tema28
             LoginPage loginPage = new LoginPage(Driver);
 
             // Act
-            loginPage.EnterCredentials(jsonModel.Users["user1"].Email, jsonModel.Users["user1"].Password); // user
+            loginPage.EnterCredentials(jsonModel[0].Email, jsonModel[0].Password); // user
             // loginPage.EnterCredentials("admin.test3@gmail.com", "password123"); //admin
 
             homePage.AddToCart(Driver.FindElement(By.XPath("/html/body/div/div[1]/div[2]/div/div/div/div/a")));
@@ -179,7 +181,7 @@ namespace Tema28
             AdminPage adminPage = new AdminPage(Driver);
 
             homePage.adminButton.Click();
-            adminPage.EditUSer(jsonModel.Users["user2"].Name, jsonModel.Users["user2"].Email, jsonModel.Users["user2"].Phone);
+            adminPage.EditUSer(jsonModel[1].Name, jsonModel[1].Email, jsonModel[1].Phone);
 
             Assert.IsTrue(Driver.FindElement(By.XPath("/html/body/div/div")).Text.Contains("The user has been successfully updated"));
             //Assert.IsTrue(adminPage.userEmailAdminTextBox.Text == "radu@gmail.com" && adminPage.userNameAdminTextBox.Text == "Radu" && adminPage.userPhoneAdminTextBox.Text == "0733556445");

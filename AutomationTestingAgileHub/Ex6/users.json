@@ -1,6 +1,5 @@
-﻿{
-"Users": {
-    "user1": {
+﻿[
+    {
       "id": 1,
       "name": "Radu F",
       "email": "flitar.radu@gmail.com",
@@ -8,23 +7,25 @@
       "phone": "075248595",
       "password": "parola123"
 
-    },
-    "user2": {
-      "id": 2,
-      "name": "Radu M",
-      "email": "radu@yahoo.com",
-      "address": "Fagaras",
-      "phone": "0755448995",
-      "password": "password124"
-    },
-      "user3": {
-        "id": 3,
-        "name": "Admin",
-        "email": "admin.test3@gmail.com",
-        "address": "Brasov",
-        "phone": "0755448945",
-        "password": "password123"
-      }
-  }
+    }
+  ,
 
-}
+  {
+    "id": 2,
+    "name": "Radu M",
+    "email": "radu@yahoo.com",
+    "address": "Fagaras",
+    "phone": "0755448995",
+    "password": "password124"
+  },
+
+  {
+    "id": 3,
+    "address": "Brasov",
+    "email": "admin.test3@gmail.com",
+    "name": "Admin",
+    "password": "password123",
+    "phone": "0755448945"
+  }
+]
+
