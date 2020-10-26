@@ -1,10 +1,13 @@
-﻿using Ex6.PageObjects;
+﻿using Ex6;
+using Ex6.PageObjects;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -14,6 +17,13 @@ namespace Tema28
     [TestFixture]
     class Tests : Hooks
     {
+        public Ex6.Model ReadJSON()
+        {
+            var jsonString = File.ReadAllText("C:\\Users\\radu.flitar\\DEV\\Learning\\AgileHub\\AutomationTestingAgileHub\\Ex6\\users.json");
+            var jsonModel = JsonSerializer.Deserialize<Model>(jsonString);
+
+            return jsonModel;
+        }
  
         public void Authenticate()
         {
@@ -33,13 +43,15 @@ namespace Tema28
         [Test]
         public void LogInAdmin()
         {
-
+            var jsonModel = ReadJSON();
             Authenticate();
+
+            
             // Arrange
             LoginPage loginPage = new LoginPage(Driver);
 
             // Act
-            loginPage.EnterCredentials("admin.test3@gmail.com", "password123");
+            loginPage.EnterCredentials(jsonModel.Users["user3"].Email, jsonModel.Users["user3"].Password);
 
             //Assert
             Assert.IsTrue(Driver.FindElement(By.XPath("//a[text()='Deconectare']")).Displayed);
@@ -72,12 +84,14 @@ namespace Tema28
         {
             Authenticate();
             // Arrange
+
+            var jsonModel = ReadJSON();
             SignUp signUp = new SignUp(Driver);
             HomePage homePage = new HomePage(Driver);
             LoginPage loginPage = new LoginPage(Driver);
 
             // Act
-            loginPage.EnterCredentials("flitar.radu@gmail.com", "parola123"); // user
+            loginPage.EnterCredentials(jsonModel.Users["user1"].Email, jsonModel.Users["user1"].Password); // user
             // loginPage.EnterCredentials("admin.test3@gmail.com", "password123"); //admin
 
             homePage.AddToCart(Driver.FindElement(By.XPath("/html/body/div/div[1]/div[2]/div/div/div/div/a")));
@@ -158,13 +172,14 @@ namespace Tema28
         [Test]
         public void EditUser()
         {
+            var jsonModel = ReadJSON();
             LogInAdmin();
 
             HomePage homePage = new HomePage(Driver);
             AdminPage adminPage = new AdminPage(Driver);
 
             homePage.adminButton.Click();
-            adminPage.EditUSer("Radu", "radu@gmail.com", "0733556445");
+            adminPage.EditUSer(jsonModel.Users["user2"].Name, jsonModel.Users["user2"].Email, jsonModel.Users["user2"].Phone);
 
             Assert.IsTrue(Driver.FindElement(By.XPath("/html/body/div/div")).Text.Contains("The user has been successfully updated"));
             //Assert.IsTrue(adminPage.userEmailAdminTextBox.Text == "radu@gmail.com" && adminPage.userNameAdminTextBox.Text == "Radu" && adminPage.userPhoneAdminTextBox.Text == "0733556445");

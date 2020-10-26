@@ -1,0 +1,30 @@
+﻿{
+"Users": {
+    "user1": {
+      "id": 1,
+      "name": "Radu F",
+      "email": "flitar.radu@gmail.com",
+      "address": "Sanpetru24",
+      "phone": "075248595",
+      "password": "parola123"
+
+    },
+    "user2": {
+      "id": 2,
+      "name": "Radu M",
+      "email": "radu@yahoo.com",
+      "address": "Fagaras",
+      "phone": "0755448995",
+      "password": "password124"
+    },
+      "user3": {
+        "id": 3,
+        "name": "Admin",
+        "email": "admin.test3@gmail.com",
+        "address": "Brasov",
+        "phone": "0755448945",
+        "password": "password123"
+      }
+  }
+
+}
