@@ -1,8 +1,17 @@
 ﻿Feature: AuthenticationTestFeature
-	In order to avoid silly mistakes
-	As a math idiot
-	I want to be told the sum of two numbers
+	In order to validate Login
+	As an admin user
+	I want to authenticate int casquad.org
 
 @mytag
-Scenario: LoginWithValidUser
-	Given I login with valid user
+Scenario Outline: LoginWithValidUser
+	Given I navigate to my authentication page
+	When I login with following credentials
+	| userEmail             |   userPassword		|
+	| <userEmailValue>		|   <userPasswordValue> |
+	Then I am logged in
+
+Examples: 
+| userEmailValue        | userPasswordValue |
+| admin.test3@gmail.com | password123       |
+| admin.test4@gmail.com | password123       |

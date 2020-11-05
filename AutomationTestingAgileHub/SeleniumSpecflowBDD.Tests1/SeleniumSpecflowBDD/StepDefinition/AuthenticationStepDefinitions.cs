@@ -6,13 +6,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using TechTalk.SpecFlow;
+using TechTalk.SpecFlow.Assist;
 
 namespace SeleniumSpecflowBDD.StepDefinition
 {
     [Binding]
     public sealed class AuthenticationStepDefinitions : Hooks
     {
-        // For additional details on SpecFlow step definitions see https://go.specflow.org/doc-stepdef
 
         private readonly ScenarioContext _scenarioContext;
 
@@ -21,12 +21,30 @@ namespace SeleniumSpecflowBDD.StepDefinition
             _scenarioContext = scenarioContext;
         }
 
-        [Given(@"I login with valid user")]
-        public void GivenILoginWithValidUser()
+        [Given(@"I navigate to my authentication page")]
+        public void GivenINavigateToMyAuthenticationPage()
         {
-            HomePage myHomePage = new HomePage(Driver);            myHomePage.Authenticate();            LoginPage myLoginPage = new LoginPage(Driver);            myLoginPage.EnterCredentials("admin.test3@gmail.com", "password123");            Assert.IsTrue(Driver.FindElement(By.XPath("//a[text()='Deconectare']")).Displayed);
-
+            HomePage homePage = new HomePage(Driver);
+            homePage.Authenticate();
         }
+
+        [When(@"I login with following credentials")]
+        public void WhenILoginWithFollowingCredentials(Table table)
+        {
+            var user = table.CreateInstance<UserDto>();
+            LoginPage myLoginPage = new LoginPage(Driver);
+            myLoginPage.EnterCredentials(user);
+        }
+
+        [Then(@"I am logged in")]
+        public void ThenIAmLoggedIn()
+        {
+            Assert.IsTrue(Driver.FindElement(By.XPath("//a[text()='Deconectare']")).Displayed);
+        }
+
+
+
+
 
     }
 }

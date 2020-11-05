@@ -3,6 +3,7 @@ using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,19 +16,22 @@ namespace SeleniumSpecflowBDD.PageObjects
         public LoginPage(IWebDriver driver)
         {
             _driver = driver;
-
             _driverWait = new WebDriverWait(_driver, TimeSpan.FromSeconds(20));
-
             _driverWait.IgnoreExceptionTypes();
-
         }
 
-        public void EnterCredentials(string user, string password)
+        public void EnterCredentials(UserDto user)
         {
             emailTextBox.Click();
-            emailTextBox.SendKeys(user);
-            passwordTextBox.SendKeys(password);
+
+            var validUser = user.GetUservalid();
+
+            emailTextBox.SendKeys(validUser.userEmail);
+            passwordTextBox.SendKeys(validUser.userPassword);
             submitButton.Click();
+
+            //var myValue = user.GetType().GetRuntimeProperties("userPassword").GetValue(user);
+            
         }
     }
 }

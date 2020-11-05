@@ -35,8 +35,8 @@ namespace SeleniumSpecflowBDD.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "AuthenticationTestFeature", "\tIn order to avoid silly mistakes\r\n\tAs a math idiot\r\n\tI want to be told the sum o" +
-                    "f two numbers", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "AuthenticationTestFeature", "\tIn order to validate Login\r\n\tAs an admin user\r\n\tI want to authenticate int casqu" +
+                    "ad.org", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -77,11 +77,20 @@ namespace SeleniumSpecflowBDD.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("LoginWithValidUser")]
         [NUnit.Framework.CategoryAttribute("mytag")]
-        public virtual void LoginWithValidUser()
+        [NUnit.Framework.TestCaseAttribute("admin.test3@gmail.com", "password123", null)]
+        [NUnit.Framework.TestCaseAttribute("admin.test4@gmail.com", "password123", null)]
+        public virtual void LoginWithValidUser(string userEmailValue, string userPasswordValue, string[] exampleTags)
         {
-            string[] tagsOfScenario = new string[] {
+            string[] @__tags = new string[] {
                     "mytag"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("userEmailValue", userEmailValue);
+            argumentsOfScenario.Add("userPasswordValue", userPasswordValue);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("LoginWithValidUser", null, tagsOfScenario, argumentsOfScenario);
 #line 7
 this.ScenarioInitialize(scenarioInfo);
@@ -104,7 +113,19 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 8
- testRunner.Given("I login with valid user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I navigate to my authentication page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                            "userEmail",
+                            "userPassword"});
+                table1.AddRow(new string[] {
+                            string.Format("{0}", userEmailValue),
+                            string.Format("{0}", userPasswordValue)});
+#line 9
+ testRunner.When("I login with following credentials", ((string)(null)), table1, "When ");
+#line hidden
+#line 12
+ testRunner.Then("I am logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
