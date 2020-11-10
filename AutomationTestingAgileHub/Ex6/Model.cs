@@ -8,6 +8,6 @@ namespace Ex6
 {
     public class Model
     {
-        public Dictionary<string, User> Users { get; set; }
+       // public Dictionary<string, User> Users { get; set; }
     }
 }

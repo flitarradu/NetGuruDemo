@@ -38,6 +38,7 @@ namespace Ex6.PageObjects
             userPhoneAdminTextBox.Clear();
             userPhoneAdminTextBox.SendKeys(phone);
             updateUserButton.Click();
+
         }
 
     }

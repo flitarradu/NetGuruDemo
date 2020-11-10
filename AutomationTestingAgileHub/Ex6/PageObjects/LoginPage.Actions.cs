@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using SeleniumSpecflowBDD;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,15 @@ namespace Ex6.PageObjects
 
             _driverWait.IgnoreExceptionTypes();
 
+        }
+
+        public void EnterCredentials(UserDto user)
+        {
+            emailTextBox.Click();
+            var validUser = user.GetUservalid();
+            emailTextBox.SendKeys(validUser.userEmail);
+            passwordTextBox.SendKeys(validUser.userPassword);
+            submitButton.Click();
         }
 
         public void EnterCredentials(string user, string password)

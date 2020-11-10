@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using SeleniumSpecflowBDD;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,15 +28,22 @@ namespace Ex6.PageObjects
             signUpButton.Click();
         }
 
-        public void SigUpFormFill()
+        public void SigUpFormFill(UserDto user)
         {
-            signUpNameTextBox.SendKeys("Radu F");
-            signUpEmailTextBox.SendKeys("flitar.radu@yahoo.com");
-            signUpPhoneTextBox.SendKeys("0733234566");
-            signUpAddressTextBox.SendKeys("Sanpetru");
-            signUpPasswordextBox.SendKeys("parola123");
-            signUpPasswordRepeatTextBox.SendKeys("parola123");
-            signUpInscriereButton.Click();
+            signUpNameTextBox.SendKeys(user.userName);
+            signUpEmailTextBox.SendKeys(user.userEmail);
+            signUpPhoneTextBox.SendKeys(user.userPhone);
+            signUpAddressTextBox.SendKeys(user.userAddress);
+            signUpPasswordextBox.SendKeys(user.userPassword);
+            signUpPasswordRepeatTextBox.SendKeys(user.userPasswordRepeat);
+            
+        }
+
+        public void AuthenticateNewUser(UserDto user)
+        {
+            userEmailTextBox.SendKeys(user.userEmail);
+            userPasswordTextBox.SendKeys(user.userPassword);
+            userAAuthenticateButton.Click();
         }
     }
 }
