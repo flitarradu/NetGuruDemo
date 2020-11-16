@@ -47,8 +47,12 @@ namespace Tema28
             //TODO: implement logic that has to run before executing each scenario
             var browserType = TestContext.Parameters.Get("Browser", "Chrome");
             _browserType = (BrowserType)Enum.Parse(typeof(BrowserType), browserType);
-            ChooseDriverInstance(_browserType);
-            Driver.Manage().Window.Maximize();
+            if (Driver is null)
+            {
+                ChooseDriverInstance(_browserType);
+                Driver.Manage().Window.Maximize();
+            }
+
             Driver.Navigate().GoToUrl("http://demosite.casqad.org/");
 
         }
@@ -75,7 +79,13 @@ namespace Tema28
         public void AfterScenario()
         {
             //TODO: implement logic that has to run after executing each scenario
-            Driver.Quit();
+
+            if (!(Driver is null))
+            {
+                Driver.Quit();
+                Driver = null;
+            }
+
         }
     }
 }
