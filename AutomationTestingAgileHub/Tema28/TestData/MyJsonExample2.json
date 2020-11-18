@@ -1,0 +1,16 @@
+{
+  "ScenarioDto": [
+    {
+      "TestCaseName": "GoogleImagesTest",
+      "Input": "http://google.com/",
+      "Others": "paris"
+    },
+    {
+      "TestCaseName": "VerifyScenario2",
+      "Input": "my second input",
+      "Others": "Other info input"
+    }
+
+  ]
+
+}

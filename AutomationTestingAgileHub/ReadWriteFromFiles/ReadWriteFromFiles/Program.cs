@@ -50,9 +50,20 @@ namespace ReadWriteFromFiles
 
            // ScenarioDto.WriteXML();
 
-            var myScenario = ScenarioDto.ReadXML();
+            //var myScenario = ScenarioDto.ReadXML();
 
-            Console.WriteLine($"Numele scenariului este {myScenario.TestCaseName}, numele proprieatii este {myScenario.TestInput}, numele proprietatii 3 este {myScenario.OtherInfo}");
+           // Console.WriteLine($"Numele scenariului este {myScenario.TestCaseName}, numele proprieatii este {myScenario.TestInput}, numele proprietatii 3 este {myScenario.OtherInfo}");
+            
+
+
+            var myList=ScenarioDto.LoadValuesFromJsonFIle();
+
+            foreach (var element in myList)
+            {
+                Console.WriteLine($" elementul {myList.IndexOf(element)}: {element.TestCaseName}, {element.TestInput}, {element.OtherInfo}, numarul de valori in campul Values {element.Values.Count}");
+            
+            
+            }
             Console.ReadKey();
         }
     }

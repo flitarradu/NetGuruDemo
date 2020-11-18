@@ -19,14 +19,14 @@ namespace Tema28
             Driver.Manage().Window.Maximize();
 
 
-            Driver.Navigate().GoToUrl("http://google.com/");
+            Driver.Navigate().GoToUrl(TestObject.Input);
             // Arrange
             Homepage homePage = new Homepage(Driver);
 
             // Act
             Driver.SwitchTo().Frame(0);
             homePage.AcceptGoogleTerms();
-            homePage.SearchGoogleImage("paris");
+            homePage.SearchGoogleImage(TestObject.Others);
             homePage.SelectGoogleImage();
 
             Driver.Navigate().Back();
