@@ -1,0 +1,31 @@
+﻿[
+    {
+      "id": 1,
+      "name": "Radu F",
+      "email": "flitar.radu@gmail.com",
+      "address": "Sanpetru24",
+      "phone": "075248595",
+      "password": "parola123"
+
+    }
+  ,
+
+  {
+    "id": 2,
+    "name": "Radu M",
+    "email": "radu@yahoo.com",
+    "address": "Fagaras",
+    "phone": "0755448995",
+    "password": "password124"
+  },
+
+  {
+    "id": 3,
+    "address": "Brasov",
+    "email": "admin.test3@gmail.com",
+    "name": "Admin",
+    "password": "password123",
+    "phone": "0755448945"
+  }
+]
+
