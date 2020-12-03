@@ -148,6 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Hooks.cs" />
+    <Compile Include="Hooks_old.cs" />
     <Compile Include="PageObjects\AdminPage.Actions.cs" />
     <Compile Include="PageObjects\AdminPage.Locators.cs" />
     <Compile Include="PageObjects\HomePage.Actions.cs" />
@@ -182,8 +183,6 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\Tema28\packages\Selenium.WebDriver.ChromeDriver.86.0.4240.2200\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\Tema28\packages\Selenium.WebDriver.ChromeDriver.86.0.4240.2200\build\Selenium.WebDriver.ChromeDriver.targets'))" />
-    <Error Condition="!Exists('..\Tema28\packages\Selenium.Chrome.WebDriver.85.0.0\build\Selenium.Chrome.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\Tema28\packages\Selenium.Chrome.WebDriver.85.0.0\build\Selenium.Chrome.WebDriver.targets'))" />
     <Error Condition="!Exists('..\Tema28\packages\Selenium.WebDriver.MicrosoftWebDriver.10.0.17134\build\Selenium.WebDriver.MicrosoftWebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\Tema28\packages\Selenium.WebDriver.MicrosoftWebDriver.10.0.17134\build\Selenium.WebDriver.MicrosoftWebDriver.targets'))" />
     <Error Condition="!Exists('..\Tema28\packages\NUnit.3.12.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\Tema28\packages\NUnit.3.12.0\build\NUnit.props'))" />
     <Error Condition="!Exists('..\Tema28\packages\NUnit3TestAdapter.3.17.0\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\Tema28\packages\NUnit3TestAdapter.3.17.0\build\net35\NUnit3TestAdapter.props'))" />
@@ -192,11 +191,15 @@
     <Error Condition="!Exists('..\Tema28\packages\SpecFlow.Tools.MsBuild.Generation.3.5.5\build\SpecFlow.Tools.MsBuild.Generation.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\Tema28\packages\SpecFlow.Tools.MsBuild.Generation.3.5.5\build\SpecFlow.Tools.MsBuild.Generation.targets'))" />
     <Error Condition="!Exists('..\Tema28\packages\SpecFlow.NUnit.3.5.5\build\SpecFlow.NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\Tema28\packages\SpecFlow.NUnit.3.5.5\build\SpecFlow.NUnit.props'))" />
     <Error Condition="!Exists('..\Tema28\packages\SpecFlow.NUnit.3.5.5\build\SpecFlow.NUnit.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\Tema28\packages\SpecFlow.NUnit.3.5.5\build\SpecFlow.NUnit.targets'))" />
+    <Error Condition="!Exists('..\Tema28\packages\Selenium.Firefox.WebDriver.0.27.0\build\Selenium.Firefox.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\Tema28\packages\Selenium.Firefox.WebDriver.0.27.0\build\Selenium.Firefox.WebDriver.targets'))" />
+    <Error Condition="!Exists('..\Tema28\packages\Selenium.WebDriver.GeckoDriver.Win64.0.28.0\build\Selenium.WebDriver.GeckoDriver.Win64.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\Tema28\packages\Selenium.WebDriver.GeckoDriver.Win64.0.28.0\build\Selenium.WebDriver.GeckoDriver.Win64.targets'))" />
+    <Error Condition="!Exists('..\Tema28\packages\Selenium.WebDriver.ChromeDriver.87.0.4280.8800\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\Tema28\packages\Selenium.WebDriver.ChromeDriver.87.0.4280.8800\build\Selenium.WebDriver.ChromeDriver.targets'))" />
   </Target>
-  <Import Project="..\Tema28\packages\Selenium.WebDriver.ChromeDriver.86.0.4240.2200\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\Tema28\packages\Selenium.WebDriver.ChromeDriver.86.0.4240.2200\build\Selenium.WebDriver.ChromeDriver.targets')" />
-  <Import Project="..\Tema28\packages\Selenium.Chrome.WebDriver.85.0.0\build\Selenium.Chrome.WebDriver.targets" Condition="Exists('..\Tema28\packages\Selenium.Chrome.WebDriver.85.0.0\build\Selenium.Chrome.WebDriver.targets')" />
   <Import Project="..\Tema28\packages\Selenium.WebDriver.MicrosoftWebDriver.10.0.17134\build\Selenium.WebDriver.MicrosoftWebDriver.targets" Condition="Exists('..\Tema28\packages\Selenium.WebDriver.MicrosoftWebDriver.10.0.17134\build\Selenium.WebDriver.MicrosoftWebDriver.targets')" />
   <Import Project="..\Tema28\packages\SpecFlow.3.5.5\build\SpecFlow.targets" Condition="Exists('..\Tema28\packages\SpecFlow.3.5.5\build\SpecFlow.targets')" />
   <Import Project="..\Tema28\packages\SpecFlow.Tools.MsBuild.Generation.3.5.5\build\SpecFlow.Tools.MsBuild.Generation.targets" Condition="Exists('..\Tema28\packages\SpecFlow.Tools.MsBuild.Generation.3.5.5\build\SpecFlow.Tools.MsBuild.Generation.targets')" />
   <Import Project="..\Tema28\packages\SpecFlow.NUnit.3.5.5\build\SpecFlow.NUnit.targets" Condition="Exists('..\Tema28\packages\SpecFlow.NUnit.3.5.5\build\SpecFlow.NUnit.targets')" />
+  <Import Project="..\Tema28\packages\Selenium.Firefox.WebDriver.0.27.0\build\Selenium.Firefox.WebDriver.targets" Condition="Exists('..\Tema28\packages\Selenium.Firefox.WebDriver.0.27.0\build\Selenium.Firefox.WebDriver.targets')" />
+  <Import Project="..\Tema28\packages\Selenium.WebDriver.GeckoDriver.Win64.0.28.0\build\Selenium.WebDriver.GeckoDriver.Win64.targets" Condition="Exists('..\Tema28\packages\Selenium.WebDriver.GeckoDriver.Win64.0.28.0\build\Selenium.WebDriver.GeckoDriver.Win64.targets')" />
+  <Import Project="..\Tema28\packages\Selenium.WebDriver.ChromeDriver.87.0.4280.8800\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\Tema28\packages\Selenium.WebDriver.ChromeDriver.87.0.4280.8800\build\Selenium.WebDriver.ChromeDriver.targets')" />
 </Project>
