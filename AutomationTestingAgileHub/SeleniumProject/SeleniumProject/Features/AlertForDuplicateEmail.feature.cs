@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Ex6.Features
+namespace SeleniumProject.Features
 {
     using TechTalk.SpecFlow;
     using System;
@@ -20,22 +20,23 @@ namespace Ex6.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.5.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("SignUpAndLogin")]
-    public partial class SignUpAndLoginFeature
+    [NUnit.Framework.DescriptionAttribute("AlertForDuplicateEmail")]
+    public partial class AlertForDuplicateEmailFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "SignUpAndLogin.feature"
+#line 1 "AlertForDuplicateEmail.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "SignUpAndLogin", "\tIn order login\r\n\tI want to create an user first", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "AlertForDuplicateEmail", "\tWhen I try to register an account\r\n\tAnd I enter an already used password\r\n\tI sho" +
+                    "uld receive an alert telling me this", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -74,27 +75,22 @@ namespace Ex6.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("SignUpAndLogin")]
-        [NUnit.Framework.CategoryAttribute("signUp")]
-        [NUnit.Framework.TestCaseAttribute("Radu", "raduflyriat@yahoo.com", "0745658426", "Sanpetru, BV", "parola12345", "parola12345", null)]
-        public virtual void SignUpAndLogin(string userNameValue, string userEmailValue, string userPhoneValue, string userAddressValue, string userPasswordValue, string userPasswordRepeatValue, string[] exampleTags)
+        [NUnit.Framework.DescriptionAttribute("AlertForDuplicateEmail")]
+        [NUnit.Framework.CategoryAttribute("mytag")]
+        [NUnit.Framework.TestCaseAttribute("testradu@someemail.com", null)]
+        public virtual void AlertForDuplicateEmail(string userEmailValue, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "signUp"};
+                    "mytag"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("userNameValue", userNameValue);
             argumentsOfScenario.Add("userEmailValue", userEmailValue);
-            argumentsOfScenario.Add("userPhoneValue", userPhoneValue);
-            argumentsOfScenario.Add("userAddressValue", userAddressValue);
-            argumentsOfScenario.Add("userPasswordValue", userPasswordValue);
-            argumentsOfScenario.Add("userPasswordRepeatValue", userPasswordRepeatValue);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("SignUpAndLogin", null, tagsOfScenario, argumentsOfScenario);
-#line 6
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("AlertForDuplicateEmail", null, tagsOfScenario, argumentsOfScenario);
+#line 7
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -114,40 +110,21 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 7
- testRunner.Given("I navigate to my website and click SignUp", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
-                            "userName",
-                            "userEmail",
-                            "userPhone",
-                            "userAddress",
-                            "userPassword",
-                            "userPasswordRepeat"});
-                table6.AddRow(new string[] {
-                            string.Format("{0}", userNameValue),
-                            string.Format("{0}", userEmailValue),
-                            string.Format("{0}", userPhoneValue),
-                            string.Format("{0}", userAddressValue),
-                            string.Format("{0}", userPasswordValue),
-                            string.Format("{0}", userPasswordRepeatValue)});
 #line 8
- testRunner.When("I fill the signup form with following data", ((string)(null)), table6, "When ");
+ testRunner.Given("I enter the login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 11
- testRunner.And("I click the sign up button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                            "userEmail"});
+                table1.AddRow(new string[] {
+                            string.Format("{0}", userEmailValue)});
+#line 9
+ testRunner.And("I enter an used email address", ((string)(null)), table1, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
-                            "userEmail",
-                            "userPassword"});
-                table7.AddRow(new string[] {
-                            string.Format("{0}", userEmailValue),
-                            string.Format("{0}", userPasswordValue)});
 #line 12
- testRunner.And("I login with newly created user", ((string)(null)), table7, "And ");
+ testRunner.When("I click the register button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 15
- testRunner.Then("I am successfully logged in with new aacount", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 13
+ testRunner.Then("I see an alert", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

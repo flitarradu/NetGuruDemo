@@ -17,4 +17,4 @@ Scenario Outline: SignUpAndLogin
 
 Examples: 
 | userNameValue | userEmailValue  | userPhoneValue | userAddressValue | userPasswordValue | userPasswordRepeatValue |
-| Radu          | raduflyiat@yahoo.com | 0745658426     | Sanpetru, BV     | parola12345       | parola12345             |
+| Radu          | raduflyriat@yahoo.com | 0745658426     | Sanpetru, BV     | parola12345       | parola12345             |
