@@ -113,14 +113,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
  testRunner.Given("I click the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                             "userEmail",
                             "userPassword"});
-                table3.AddRow(new string[] {
+                table4.AddRow(new string[] {
                             string.Format("{0}", userEmailValue),
                             string.Format("{0}", userPasswordValue)});
 #line 8
- testRunner.When("I login with the following credentials", ((string)(null)), table3, "When ");
+ testRunner.When("I login with the following credentials", ((string)(null)), table4, "When ");
 #line hidden
 #line 11
  testRunner.Then("I am succsfully logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

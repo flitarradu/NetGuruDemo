@@ -20,23 +20,23 @@ namespace SeleniumProject.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.5.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("TermsOfServicePopupShown")]
-    public partial class TermsOfServicePopupShownFeature
+    [NUnit.Framework.DescriptionAttribute("CheckCartTotal")]
+    public partial class CheckCartTotalFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "TermsOfServicePopupShown.feature"
+#line 1 "CheckCartTotal.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "TermsOfServicePopupShown", "\tIn order to order a product\r\n\tYou must agree to Terms of Service\r\n\tAnd a popup m" +
-                    "ust be shown otherwise", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "CheckCartTotal", "\tIn order to avoid overspending\r\n\tWhen I add multiple products in the cart\r\n\tThe " +
+                    "final total should be correct", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -75,22 +75,14 @@ namespace SeleniumProject.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("TermsOfServicePopupShown")]
+        [NUnit.Framework.DescriptionAttribute("CheckCartTotal")]
         [NUnit.Framework.CategoryAttribute("mytag")]
-        [NUnit.Framework.TestCaseAttribute("testradu@someemail.com", "testpassword123", null)]
-        public virtual void TermsOfServicePopupShown(string userEmailValue, string userPasswordValue, string[] exampleTags)
+        public virtual void CheckCartTotal()
         {
-            string[] @__tags = new string[] {
+            string[] tagsOfScenario = new string[] {
                     "mytag"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("userEmailValue", userEmailValue);
-            argumentsOfScenario.Add("userPasswordValue", userPasswordValue);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("TermsOfServicePopupShown", null, tagsOfScenario, argumentsOfScenario);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("CheckCartTotal", null, tagsOfScenario, argumentsOfScenario);
 #line 7
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -111,23 +103,17 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
-                            "userEmail",
-                            "userPassword"});
-                table7.AddRow(new string[] {
-                            string.Format("{0}", userEmailValue),
-                            string.Format("{0}", userPasswordValue)});
 #line 8
- testRunner.Given("I am logged in with following user", ((string)(null)), table7, "Given ");
+ testRunner.Given("I go to dresses page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 9
+ testRunner.And("I add 2 dresses into the cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 10
+ testRunner.When("I navigate to cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 11
- testRunner.And("I add a product into cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 12
- testRunner.When("I complete the checkout process", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 13
- testRunner.Then("I am shown a popup if terms of service is not checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the final total should add up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -20,23 +20,23 @@ namespace SeleniumProject.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.5.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("TermsOfServicePopupShown")]
-    public partial class TermsOfServicePopupShownFeature
+    [NUnit.Framework.DescriptionAttribute("CheckWishListSaving")]
+    public partial class CheckWishListSavingFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "TermsOfServicePopupShown.feature"
+#line 1 "CheckWishListSaving.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "TermsOfServicePopupShown", "\tIn order to order a product\r\n\tYou must agree to Terms of Service\r\n\tAnd a popup m" +
-                    "ust be shown otherwise", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "CheckWishListSaving", "\tVerify the wishList functionality\r\n\tWill verify if one item is saved in wishlist" +
+                    "", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -75,10 +75,10 @@ namespace SeleniumProject.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("TermsOfServicePopupShown")]
+        [NUnit.Framework.DescriptionAttribute("CheckWishListSaving")]
         [NUnit.Framework.CategoryAttribute("mytag")]
         [NUnit.Framework.TestCaseAttribute("testradu@someemail.com", "testpassword123", null)]
-        public virtual void TermsOfServicePopupShown(string userEmailValue, string userPasswordValue, string[] exampleTags)
+        public virtual void CheckWishListSaving(string userEmailValue, string userPasswordValue, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "mytag"};
@@ -90,8 +90,8 @@ namespace SeleniumProject.Features
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("userEmailValue", userEmailValue);
             argumentsOfScenario.Add("userPasswordValue", userPasswordValue);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("TermsOfServicePopupShown", null, tagsOfScenario, argumentsOfScenario);
-#line 7
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("CheckWishListSaving", null, tagsOfScenario, argumentsOfScenario);
+#line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -111,23 +111,23 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                             "userEmail",
                             "userPassword"});
-                table7.AddRow(new string[] {
+                table3.AddRow(new string[] {
                             string.Format("{0}", userEmailValue),
                             string.Format("{0}", userPasswordValue)});
-#line 8
- testRunner.Given("I am logged in with following user", ((string)(null)), table7, "Given ");
+#line 7
+ testRunner.Given("I am logged in with following user", ((string)(null)), table3, "Given ");
+#line hidden
+#line 10
+ testRunner.When("I add a dress to the wish list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 11
- testRunner.And("I add a product into cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("navigate to account\'s wish list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 12
- testRunner.When("I complete the checkout process", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 13
- testRunner.Then("I am shown a popup if terms of service is not checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I see the dress added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

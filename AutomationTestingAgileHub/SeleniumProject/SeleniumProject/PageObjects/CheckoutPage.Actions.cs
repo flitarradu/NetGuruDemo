@@ -38,5 +38,20 @@ namespace SeleniumProject.PageObjects
             addressProceedCheckoutButton.Click();
             shippingProceedCheckoutButton.Click();
         }
+
+        public double GetTotal()
+        {
+            ((IJavaScriptExecutor)_driver).ExecuteScript("window.scrollTo(0, 500)");
+            var totals = _driver.FindElements(By.XPath("//*[contains(@id, 'total_product_price')]"));
+
+            double totalCost = 0;
+            foreach (var total in totals)
+            {
+                var totalText = total.Text.Split('$');
+                totalCost += Convert.ToDouble(totalText[1]);
+            }
+
+            return Math.Round(totalCost, 2);
+        }
     }
 }

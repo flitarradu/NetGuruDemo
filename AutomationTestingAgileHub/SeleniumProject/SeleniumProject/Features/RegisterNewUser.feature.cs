@@ -121,14 +121,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
  testRunner.Given("I navigate to website and click login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                             "userEmail"});
-                table4.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             string.Format("{0}", userEmailValue)});
 #line 8
- testRunner.Then("I fill desired email", ((string)(null)), table4, "Then ");
+ testRunner.Then("I fill desired email", ((string)(null)), table5, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                             "userFirstName",
                             "userLastName",
                             "userPhone",
@@ -138,7 +138,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "userAddressLastName",
                             "userCity",
                             "userPostalCode"});
-                table5.AddRow(new string[] {
+                table6.AddRow(new string[] {
                             string.Format("{0}", userFirstNameValue),
                             string.Format("{0}", userLastNameValue),
                             string.Format("{0}", userPhoneValue),
@@ -149,7 +149,7 @@ this.ScenarioInitialize(scenarioInfo);
                             string.Format("{0}", userCityValue),
                             string.Format("{0}", userPostalCodeValue)});
 #line 11
- testRunner.When("I fill the register form with following data", ((string)(null)), table5, "When ");
+ testRunner.When("I fill the register form with following data", ((string)(null)), table6, "When ");
 #line hidden
 #line 14
  testRunner.And("I click the register button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

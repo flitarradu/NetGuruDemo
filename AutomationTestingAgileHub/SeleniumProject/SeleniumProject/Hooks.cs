@@ -27,7 +27,7 @@ namespace SeleniumProject
         [BeforeScenario]
         public void BeforeScenario()
         {
-            var browserType = TestContext.Parameters.Get("Browser", "Firefox");
+            var browserType = TestContext.Parameters.Get("Browser", "Chrome");
             _browserType = (BrowserType)Enum.Parse(typeof(BrowserType), browserType);
             if (Driver is null)
             {
