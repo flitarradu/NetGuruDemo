@@ -14,7 +14,7 @@ namespace SeleniumProject.PageObjects
         private IWebElement loginButton => _driver.FindElement(By.XPath("/html/body/nav/div/div[2]/ul/li[2]/ul/li[2]/a"));
         public IWebElement homeButton => _driver.FindElement(By.XPath("/html/body/div/div[2]/div/div[1]/a[1]"));
         public IWebElement shortSleeveShirtButton => _driver.FindElement(By.XPath("/html/body/div/div[2]/div/div[2]/div/div[1]/ul[1]/li[1]/div/div[1]/div/a[1]/img"));
-        private IWebElement shortSleeveShirtAddCartButton => _driver.FindElement(By.XPath("/html/body/div/div[2]/div/div[3]/div/div/div/div[4]/form/div/div[3]/div[1]/p/button"));
+        private IWebElement shortSleeveShirtAddCartButton => _driver.FindElement(By.XPath("/html/body/div/div/div[3]/form/div/div[3]/div[1]/p/button/span"));
         public IWebElement proceedCheckoutButton => _driver.FindElement(By.XPath("/html/body/div/div[1]/header/div[3]/div/div/div[4]/div[1]/div[2]/div[4]/a"));
         public IWebElement emailAddressTextBox => _driver.FindElement(By.XPath("/html/body/div/div[2]/div/div[3]/div/div/div[1]/form/div/div[2]/input"));
         public IWebElement searchTextBox => _driver.FindElement(By.XPath("/html/body/div/div[1]/header/div[3]/div/div/div[2]/form/input[4]"));

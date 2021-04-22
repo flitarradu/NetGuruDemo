@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace SeleniumProject.PageObjects
@@ -31,9 +32,10 @@ namespace SeleniumProject.PageObjects
         public void AddTshirtToCart()
         {
             homeButton.Click();
-            ((IJavaScriptExecutor)_driver).ExecuteScript("window.scrollTo(0, 500)"); 
+            ((IJavaScriptExecutor)_driver).ExecuteScript("window.scrollTo(0, 500)");
+            Thread.Sleep(2000);
             shortSleeveShirtButton.Click();
-            System.Threading.Thread.Sleep(2000);
+            Thread.Sleep(4000);
             shortSleeveShirtAddCartButton.Click();
 
         }

@@ -1,0 +1,7 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1611771949659,87,1 - Get all the shoes,404,Not Found,Thread Group 1-1,text,false,Test failed: text expected to contain /[]/,402,175,1,1,http://localhost:3000/shoes/,87,0,68
+1611771949759,4,2 - Add a new shoe - id=2,404,Not Found,Thread Group 1-1,text,false,Test failed: text expected to contain /Tompson Li/,426,227,1,1,http://localhost:3000/shoes/,4,0,0
+1611771949770,16,3 - Get the first shoe details,404,Not Found,Thread Group 1-1,text,false,Test failed: text expected to contain /Tompson Li/,402,176,1,1,http://localhost:3000/shoes/3,15,0,5
+1611771949789,6,4 - Replace the first shoe details + add price,404,Not Found,Thread Group 1-1,text,false,"Test failed: text expected to contain /""$10.00""/",402,236,1,1,http://localhost:3000/shoes/3,6,0,2
+1611771949797,6,5 - Update the title of the first shoe,404,Not Found,Thread Group 1-1,text,false,,402,199,1,1,http://localhost:3000/shoes/3,6,0,0
+1611771949805,13,6 - Delete the first shoe,404,Not Found,Thread Group 1-1,text,false,,402,179,1,1,http://localhost:3000/shoes/6,11,0,1

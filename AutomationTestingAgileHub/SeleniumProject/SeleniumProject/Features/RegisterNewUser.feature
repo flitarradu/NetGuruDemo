@@ -16,4 +16,4 @@ Scenario: RegisterNewUser
 
 Examples: 
 | userEmailValue          | userFirstNameValue | userLastNameValue | userPhoneValue | userAddressValue  | userPasswordValue | userAddressFirstNameValue | userAddressLastNameValue | userCityValue | userPostalCodeValue |
-| testradu4@someemail.com | Radu               | Nicolae           | 202-555-0187   | Sanpetru, Lunii 2 | testpassword123   | Radu                      | Nicolae                  | Brasov        | 23456               |
+| testradu5@someemail.com | Radu               | Nicolae           | 202-555-0187   | Sanpetru, Lunii 2 | testpassword123   | Radu                      | Nicolae                  | Brasov        | 23456               |

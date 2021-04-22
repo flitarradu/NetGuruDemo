@@ -1,0 +1,21 @@
+nunit3-console.exe --testparam:Browser="Chrome" "C:\Users\radu.flitar\DEV\Learning\AgileHub\AutomationTestingAgileHub\SeleniumSpecflowBDD.Tests1\SeleniumSpecflowBDD\bin\Debug\SeleniumSpecflowBDD.dll"
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\MSBuild.exe" C:\Users\radu.flitar\DEV\Learning\AgileHub\AutomationTestingAgileHub\SeleniumProject\SeleniumProject\SeleniumProject.sln
+
+
+newman run APITest.postman_collection -e TestApi.postman_environment
+
+newman run MyBookingApi.postman_collection.json -e "Test Environment.postman_environment.json"
+
+
+C:\Users\radu.flitar\DEV\JMeter\apache-jmeter-5.1.1\bin\jmeter -n -t C:\Users\radu.flitar\DEV\JMeter\apache-jmeter-5.1.1\bin\AgileHubQAA\DDTPlan.jmx -l C:\Users\radu.flitar\DEV\JMeter\apache-jmeter-5.1.1\bin\AgileHubQAA\shoes.csv -e -o C:\Users\radu.flitar\DEV\JMeter\apache-jmeter-5.1.1\bin\AgileHubQAA\Report
+
+json-server --watch db.json
+json-server --watch db.json
+
+
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\MSBuild.exe"
+
+
+
+
+

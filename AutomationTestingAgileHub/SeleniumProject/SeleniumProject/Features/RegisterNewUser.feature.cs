@@ -76,7 +76,7 @@ namespace SeleniumProject.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("RegisterNewUser")]
         [NUnit.Framework.CategoryAttribute("mytag")]
-        [NUnit.Framework.TestCaseAttribute("testradu4@someemail.com", "Radu", "Nicolae", "202-555-0187", "Sanpetru, Lunii 2", "testpassword123", "Radu", "Nicolae", "Brasov", "23456", null)]
+        [NUnit.Framework.TestCaseAttribute("testradu5@someemail.com", "Radu", "Nicolae", "202-555-0187", "Sanpetru, Lunii 2", "testpassword123", "Radu", "Nicolae", "Brasov", "23456", null)]
         public virtual void RegisterNewUser(string userEmailValue, string userFirstNameValue, string userLastNameValue, string userPhoneValue, string userAddressValue, string userPasswordValue, string userAddressFirstNameValue, string userAddressLastNameValue, string userCityValue, string userPostalCodeValue, string[] exampleTags)
         {
             string[] @__tags = new string[] {

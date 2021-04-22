@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "9a35adfe-0f33-429c-80f9-cefaeb1ccaf3",
+		"name": "AgileHubTests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Booking",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var response = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Validate a new booking has been created\", () => {\r",
+							"    pm.expect(response.booking.)\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstname\" : \"Radu\",\r\n    \"lastname\" : \"Flitar\",\r\n    \"totalprice\" : 123454,\r\n    \"depositpaid\" : true,\r\n    \"bookingdates\" : {\r\n        \"checkin\" : \"2020-12-16\",\r\n        \"checkout\" : \"2020-12-25\"\r\n    },\r\n    \"additionalneeds\" : \"Breakfast\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/booking",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"booking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateBooking",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validate response data format is correct\", function()\r",
+							"{\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.booking.firstname).to.be.a('string'); \r",
+							"    pm.expect(jsonData.booking.totalprice).to.be.a('number');\r",
+							"})\r",
+							"\r",
+							"if(pm.response.json().booking.additionalneeds===undefined)\r",
+							"{\r",
+							"    pm.test.skip(\"Costumer has not additional needs\",()=>{\r",
+							"        return\r",
+							"    })\r",
+							"}\r",
+							"else{\r",
+							"    pm.test(\"Costumer has additional needs\",()=>{ pm.expect(pm.response.json().booking.additionalneeds).to.be.a('string')\r",
+							"    })\r",
+							"}\r",
+							"\r",
+							"pm.globals.set('my_Second_variable', 2345)\r",
+							"pm.globals.unset('my_Second_variable')\r",
+							"pm.globals.clear()"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstname\" : \"Jim\",\r\n    \"lastname\" : \"Brown\",\r\n    \"totalprice\" : 1142341233,\r\n    \"depositpaid\" : true,\r\n    \"bookingdates\" : {\r\n        \"checkin\" : \"2018-01-01\",\r\n        \"checkout\" : \"2019-01-01\"\r\n    },\r\n    \"additionalneeds\" : \"Breakfast\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/booking",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"booking"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
