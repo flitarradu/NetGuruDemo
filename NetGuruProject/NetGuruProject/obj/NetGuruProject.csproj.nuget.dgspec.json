@@ -1,0 +1,120 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\radu.flitar\\DEV\\Learning\\AgileHub\\DemoNetGuru\\NetGuruDemo\\NetGuruProject\\NetGuruProject\\NetGuruProject.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\radu.flitar\\DEV\\Learning\\AgileHub\\DemoNetGuru\\NetGuruDemo\\NetGuruProject\\NetGuruProject\\NetGuruProject.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\radu.flitar\\DEV\\Learning\\AgileHub\\DemoNetGuru\\NetGuruDemo\\NetGuruProject\\NetGuruProject\\NetGuruProject.csproj",
+        "projectName": "NetGuruProject",
+        "projectPath": "C:\\Users\\radu.flitar\\DEV\\Learning\\AgileHub\\DemoNetGuru\\NetGuruDemo\\NetGuruProject\\NetGuruProject\\NetGuruProject.csproj",
+        "packagesPath": "C:\\Users\\radu.flitar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\radu.flitar\\DEV\\Learning\\AgileHub\\DemoNetGuru\\NetGuruDemo\\NetGuruProject\\NetGuruProject\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\radu.flitar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Gherkin": {
+              "target": "Package",
+              "version": "[19.0.3, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.5.0, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.13.2, )"
+            },
+            "NUnit.Console": {
+              "target": "Package",
+              "version": "[3.12.0, )"
+            },
+            "NUnit.ConsoleRunner": {
+              "target": "Package",
+              "version": "[3.12.0, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[3.17.0, )"
+            },
+            "Selenium.Firefox.WebDriver": {
+              "target": "Package",
+              "version": "[0.27.0, )"
+            },
+            "Selenium.WebDriver": {
+              "target": "Package",
+              "version": "[3.141.0, )"
+            },
+            "Selenium.WebDriver.ChromeDriver": {
+              "target": "Package",
+              "version": "[91.0.4472.1900, )"
+            },
+            "SpecFlow": {
+              "target": "Package",
+              "version": "[3.8.14, )"
+            },
+            "SpecFlow.NUnit": {
+              "target": "Package",
+              "version": "[3.8.14, )"
+            },
+            "SpecFlow.Tools.MsBuild.Generation": {
+              "target": "Package",
+              "version": "[3.8.14, )"
+            },
+            "System.Threading.Tasks.Extensions": {
+              "target": "Package",
+              "version": "[4.5.4, )"
+            },
+            "WebDriver.ChromeDriver.win32": {
+              "target": "Package",
+              "version": "[90.0.4430.24, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

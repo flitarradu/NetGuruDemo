@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\radu.flitar\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\radu.flitar\\.nuget\\packages"
+    ]
+  }
+}
