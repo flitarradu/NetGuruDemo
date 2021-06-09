@@ -1,7 +1,7 @@
 # NetGuruDemo
 2 Login Test Cases for NetGuru application
 
-# How to open the sollution on Visual Studio 2019
+# How to open the solution on Visual Studio 2019
 
 1. Open Visual Studio 2019
 2. On the start window, select **Clone a repository**
